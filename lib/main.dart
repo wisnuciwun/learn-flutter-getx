@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -73,6 +72,57 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+// class SnackBarCommon extends StatelessWidget {
+//   const SnackBarCommon({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text("Snackbar")),
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: (() {
+//             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+//               content: Text("Hello"),
+//               action: SnackBarAction(
+//                 label: "labels",
+//                 onPressed: () {},
+//               ),
+//             ));
+//           }),
+//           child: const Text("Open snackbar"),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class SnackBarGetx extends StatelessWidget {
+//   const SnackBarGetx({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text("Snackbar")),
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: (() {
+//             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+//               content: Text("Hello"),
+//               action: SnackBarAction(
+//                 label: "labels",
+//                 onPressed: () {},
+//               ),
+//             ));
+//           }),
+//           child: const Text("Open snackbar"),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 
 
 // class Home extends StatefulWidget {
