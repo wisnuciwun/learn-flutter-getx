@@ -12,7 +12,7 @@ class TryApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(home: Home()); // use getx here
+    return GetMaterialApp(home: SnackBarGetx()); // use getx here
   }
 }
 
@@ -34,6 +34,7 @@ class Home extends StatelessWidget {
           title: const Text("Stateless page with getx"), centerTitle: true),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          // if using arrow func
           // Obx(() => Text(
           //   "${homectrl.dataNum.value}",
           //   style: TextStyle(fontSize: 20),
@@ -98,30 +99,25 @@ class Home extends StatelessWidget {
 //   }
 // }
 
-// class SnackBarGetx extends StatelessWidget {
-//   const SnackBarGetx({Key? key}) : super(key: key);
+class SnackBarGetx extends StatelessWidget {
+  const SnackBarGetx({Key? key}) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: const Text("Snackbar")),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: (() {
-//             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-//               content: Text("Hello"),
-//               action: SnackBarAction(
-//                 label: "labels",
-//                 onPressed: () {},
-//               ),
-//             ));
-//           }),
-//           child: const Text("Open snackbar"),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    // snackbar default position is on top
+    return Scaffold(
+      appBar: AppBar(title: const Text("Snackbar")),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: (() {
+            Get.snackbar("New message is received", "close", snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.blue[300]);
+          }),
+          child: const Text("Open snackbar"),
+        ),
+      ),
+    );
+  }
+}
 
 
 
